@@ -26,16 +26,16 @@ public class StudentDatabase {
         }
         return studentsGiven;
     }
-    public static void writeCSV(String path, List<Student> students) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
-            for (Student student : students) {
-                bw.write(student.getId() + "," + student.getFirstName() + "," + student.getLastName() + "," + student.getBirth() + "," + student.getLevel());
-                bw.newLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void writeCSV(String path, List<Student> students) {
+//        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
+//            for (Student student : students) {
+//                bw.write(student.getId() + "," + student.getFirstName() + "," + student.getLastName() + "," + student.getBirth() + "," + student.getLevel());
+//                bw.newLine();
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public static void main(String[] args) {
         List<Student> students = readCSV("C:\\Users\\denaa\\JavaProjects231\\ICS202PPFF\\src\\students-details.csv");

@@ -62,7 +62,6 @@ public class Btrees {
                 LeafNode targetLeaf = findLeafNode(key);
                 if (!targetLeaf.insert(new DictionaryPair(key, value))) {
                     // Split logic if the leaf node is full
-                    // Add necessary split handling here
                 }
             }
         }
@@ -107,7 +106,6 @@ public class Btrees {
 
 
         private LeafNode findLeafNode(int key) {
-            // Simplified logic to find the target leaf node
             return firstLeaf;
         }
 
@@ -193,7 +191,6 @@ public class Btrees {
                     if (selectedIndex > 0 && selectedIndex <= students.size()) {
                         Student selectedStudent = students.get(selectedIndex - 1);
                         //System.out.println(selectedStudent.getFirstName());
-                        // Call a method to edit the selected student
                         System.out.println("Enter the number of the command you want:");
                         System.out.println("1-Edit student");
                         System.out.println("2-Delete student");
@@ -256,7 +253,6 @@ public class Btrees {
         System.out.println("What would you like the new edit to be?");
         String input4 = scanner.nextLine();
 
-        // Delete the student from the B+ tree
         //database.deleteStudent(student, database);
 
         if (Objects.equals(input3, "1")) {
@@ -271,7 +267,6 @@ public class Btrees {
             return;
         }
         //database.addStudent(student);
-        // Add the edited student to the edited students list
         database.editedStudents.add(student);
 
         System.out.println(student.getId() + ", " + student.getFirstName() + ", " + student.getLastName() + ", " + student.getBirth() + ", " + student.getLevel());
@@ -389,31 +384,31 @@ public class Btrees {
             displayAndEditStudents(database.searchByLevel(input2),database);
         }else if (Objects.equals(input, "4")) {
             System.out.println("Exiting...");
-            writeCSV("C:\\Users\\denaa\\JavaProjects231\\ICS202PPFF\\src\\students-details.csv", database.idIndex.getAllStudents(), database.editedStudents);        }else{
-            System.out.println("Invalid input. Try again!");
-            ToMainMenu(database);}
+            //writeCSV("C:\\Users\\denaa\\JavaProjects231\\ICS202PPFF\\src\\students-details.csv", database.idIndex.getAllStudents(), database.editedStudents);        }else{
+            //System.out.println("Invalid input. Try again!");
+            //ToMainMenu(database);}
 
 
 
     }
-    public void writeCSV(String filePath, List<Student> students, List<Student> editedStudents) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            for (Student student : students) {
-                writer.write(student.toCSV());
-                writer.newLine();
-            }
-            for (Student student : editedStudents) {
-                writer.write(student.toCSV());
-                writer.newLine();
-            }
-            System.out.println("CSV file written successfully!");
-        } catch (IOException e) {
-            System.out.println("Error writing CSV file: " + e.getMessage());
-        }
-    }
+//    public void writeCSV(String filePath, List<Student> students, List<Student> editedStudents) {
+//        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+//            for (Student student : students) {
+//                writer.write(student.toCSV());
+//                writer.newLine();
+//            }
+////            for (Student student : editedStudents) {
+////                writer.write(student.toCSV());
+////                writer.newLine();
+////            }
+//            System.out.println("CSV file written successfully!");
+//        } catch (IOException e) {
+//            System.out.println("Error writing CSV file: " + e.getMessage());
+//        }
+//    }
 
 
 
 
 
-}
+}}
